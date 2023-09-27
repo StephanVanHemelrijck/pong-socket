@@ -3,12 +3,12 @@ const { Server } = require("socket.io");
 const cors = require("cors");
 const express = require("express");
 
-const app = express();
-app.use(cors());
+// const app = express();
+// app.use(cors());
 
-const httpServer = http.createServer(app);
+// const httpServer = http.createServer(app);
 
-const io = new Server(httpServer, {
+const io = new Server({
   cors: {
     origin: "*",
     methods: ["GET", "POST"],
@@ -111,6 +111,6 @@ io.on("connection", (socket) => {
   });
 });
 
-httpServer.listen(3001, () => {
-  console.log("Socket.io server listening on port 3001");
-});
+// httpServer.listen(3001, () => {
+//   console.log("Socket.io server listening on port 3001");
+// });
